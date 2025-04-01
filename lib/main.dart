@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_weight/db_weight/db_weight.dart';
+import 'package:my_weight/pages/abrosia_creat/abrosia_creat_binding.dart';
+import 'package:my_weight/pages/abrosia_creat/abrosia_creat_view.dart';
 import 'package:my_weight/pages/abrosia_records/abrosia_records_binding.dart';
 import 'package:my_weight/pages/abrosia_records/abrosia_records_view.dart';
 import 'package:my_weight/pages/reload_page/reload_page_binding.dart';
@@ -13,6 +15,8 @@ import 'package:my_weight/pages/weight_second/weight_second_binding.dart';
 import 'package:my_weight/pages/weight_second/weight_second_view.dart';
 import 'package:my_weight/pages/weight_tab/weight_tab_binding.dart';
 import 'package:my_weight/pages/weight_tab/weight_tab_view.dart';
+
+import 'db_weight/weight_fac.dart';
 
 Color primaryColor = const Color(0xff3277fa);
 Color bgColor = const Color(0xfff0f1f5);
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Weights,
-      initialRoute: '/weightTab',
+      initialRoute: '/init',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -83,9 +87,11 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Weights = [
-  GetPage(name: '/reloadPage', page: () => ReloadPageView(), binding: ReloadPageBinding()),
+  GetPage(name: '/init', page: () => const AbrosiaCreatView(), binding: AbrosiaCreatBinding()),
+  GetPage(name: '/reloadPage', page: () => const ReloadPageView(), binding: ReloadPageBinding()),
   GetPage(name: '/weightFirst', page: () => WeightFirstPage(), binding: WeightFirstBinding()),
   GetPage(name: '/weightSecond', page: () => WeightSecondPage(), binding: WeightSecondBinding()),
+  GetPage(name: '/weightFac', page: () => const WeightFac()),
   GetPage(name: '/weightTab', page: () => WeightTabPage(), binding: WeightTabBinding()),
   GetPage(name: '/weightRecords', page: () => WeightRecordsPage(), binding: WeightRecordsBinding()),
   GetPage(name: '/abrosiaRecords', page: () => AbrosiaRecordsPage(), binding: AbrosiaRecordsBinding()),
