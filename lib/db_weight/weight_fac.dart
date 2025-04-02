@@ -23,7 +23,7 @@ class WeightFac extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.wzvtknu.value)),
+              url: WebUri.uri(Uri.parse(controller.ofaxhcj.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;

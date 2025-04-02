@@ -11,7 +11,7 @@ class AbrosiaCreatView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.morissette.value
+          () => controller.tremblay.value
               ? const CircularProgressIndicator(color: Colors.blue)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class AbrosiaCreatView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.ecotxjzk();
+              controller.sqlfn();
             },
             icon: const Icon(
               Icons.restart_alt,
